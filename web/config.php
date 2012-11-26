@@ -21,48 +21,22 @@ $minorProblems = $symfonyRequirements->getFailedRecommendations();
 
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <meta name="robots" content="noindex,nofollow" />
-        <title>Symfony Configuration</title>
-        <link rel="stylesheet" href="bundles/framework/css/structure.css" media="all" />
-        <link rel="stylesheet" href="bundles/framework/css/body.css" media="all" />
+        <meta charset="UTF-8" />
         <link rel="stylesheet" href="bundles/sensiodistribution/webconfigurator/css/install.css" media="all" />
+        <title>Symfony Configuration</title>
     </head>
     <body>
-        <div id="content">
-            <div class="header clear-fix">
-                <div class="header-logo">
-                    <img src="bundles/framework/images/logo_symfony.png" alt="Symfony" />
-                </div>
-
-                <div class="search">
-                  <form method="get" action="http://symfony.com/search">
-                    <div class="form-row">
-
-                      <label for="search-id">
-                          <img src="bundles/framework/images/grey_magnifier.png" alt="Search on Symfony website" />
-                      </label>
-
-                      <input name="q" id="search-id" type="search" placeholder="Search on Symfony website" />
-
-                      <button type="submit" class="sf-button">
-                          <span class="border-l">
-                            <span class="border-r">
-                                <span class="btn-bg">OK</span>
-                            </span>
-                        </span>
-                      </button>
+        <div id="symfony-wrapper">
+            <div id="symfony-content">
+                <div class="symfony-blocks-install">
+                    <div class="symfony-block-logo">
+                        <img src="bundles/sensiodistribution/webconfigurator/images/logo-big.gif" alt="Symfony logo" />
                     </div>
-                   </form>
-                </div>
-            </div>
 
-            <div class="sf-reset">
-                <div class="block">
                     <div class="symfony-block-content">
-                        <h1 class="title">Welcome!</h1>
+                        <h1>Welcome!</h1>
                         <p>Welcome to your new Symfony project.</p>
                         <p>
                             This script will guide you through the basic configuration of your project.

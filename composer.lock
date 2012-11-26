@@ -1,5 +1,5 @@
 {
-    "hash": "8e18525c6cca8c6369ed695fc460c472",
+    "hash": "bef481ec1f3fcd9a2be0caf27020665e",
     "packages": [
         {
             "name": "doctrine/common",
@@ -414,243 +414,18 @@
             ]
         },
         {
-            "name": "knplabs/knp-components",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/KnpLabs/knp-components",
-                "reference": "1.1.2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/KnpLabs/knp-components/archive/1.1.2.zip",
-                "reference": "1.1.2",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.2"
-            },
-            "time": "1353057734",
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.2.x-dev"
-                }
-            },
-            "installation-source": "source",
-            "autoload": {
-                "psr-0": {
-                    "Knp\\Component": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "KnpLabs Team",
-                    "homepage": "http://knplabs.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "http://github.com/KnpLabs/knp-components/contributors"
-                }
-            ],
-            "description": "Knplabs component library",
-            "homepage": "http://github.com/KnpLabs/knp-components",
-            "keywords": [
-                "pager",
-                "components",
-                "knp",
-                "knplabs",
-                "paginator"
-            ]
-        },
-        {
-            "name": "knplabs/knp-menu",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "http://github.com/KnpLabs/KnpMenu.git",
-                "reference": "8dd8c07f20f19f50174dc487baa7b14f26e6bb8a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/KnpLabs/KnpMenu/archive/8dd8c07f20f19f50174dc487baa7b14f26e6bb8a.zip",
-                "reference": "8dd8c07f20f19f50174dc487baa7b14f26e6bb8a",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "silex/silex": "1.0.*",
-                "twig/twig": ">=1.2,<2.0-dev",
-                "pimple/pimple": "1.0.*"
-            },
-            "suggest": {
-                "pimple/pimple": "for the built-in implementations of the menu provider and renderer provider",
-                "silex/silex": "for the integration with your silex application",
-                "twig/twig": "for the TwigRenderer and the integration with your templates"
-            },
-            "time": "1353000731",
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0.x-dev"
-                }
-            },
-            "installation-source": "source",
-            "autoload": {
-                "psr-0": {
-                    "Knp\\Menu\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Christophe Coevoet",
-                    "email": "stof@notk.org"
-                },
-                {
-                    "name": "KnpLabs",
-                    "homepage": "http://knplabs.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://github.com/KnpLabs/KnpMenu/contributors"
-                }
-            ],
-            "description": "An object oriented menu library",
-            "homepage": "http://knplabs.com",
-            "keywords": [
-                "menu",
-                "tree"
-            ]
-        },
-        {
-            "name": "knplabs/knp-menu-bundle",
-            "version": "dev-master",
-            "target-dir": "Knp/Bundle/MenuBundle",
-            "source": {
-                "type": "git",
-                "url": "http://github.com/KnpLabs/KnpMenuBundle.git",
-                "reference": "471ad25ea4fcc469f901a85bc5ca530b0bc68624"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/KnpLabs/KnpMenuBundle/archive/471ad25ea4fcc469f901a85bc5ca530b0bc68624.zip",
-                "reference": "471ad25ea4fcc469f901a85bc5ca530b0bc68624",
-                "shasum": ""
-            },
-            "require": {
-                "knplabs/knp-menu": "2.0.*",
-                "symfony/framework-bundle": ">=2.0,<2.3-dev"
-            },
-            "time": "1351767907",
-            "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0.x-dev"
-                }
-            },
-            "installation-source": "source",
-            "autoload": {
-                "psr-0": {
-                    "Knp\\Bundle\\MenuBundle": ""
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Christophe Coevoet",
-                    "email": "stof@notk.org"
-                },
-                {
-                    "name": "Knplabs",
-                    "homepage": "http://knplabs.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://github.com/KnpLabs/KnpMenuBundle/contributors"
-                }
-            ],
-            "description": "This bundle provides an integration of the KnpMenu library",
-            "keywords": [
-                "menu"
-            ]
-        },
-        {
-            "name": "knplabs/knp-paginator-bundle",
-            "version": "dev-master",
-            "target-dir": "Knp/Bundle/PaginatorBundle",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/KnpLabs/KnpPaginatorBundle",
-                "reference": "0d719a9bd6973bde1b10587fc2c85cf04c5e0e9d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/KnpLabs/KnpPaginatorBundle/archive/0d719a9bd6973bde1b10587fc2c85cf04c5e0e9d.zip",
-                "reference": "0d719a9bd6973bde1b10587fc2c85cf04c5e0e9d",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.2",
-                "knplabs/knp-components": ">=1.1",
-                "twig/twig": ">=1.5",
-                "symfony/framework-bundle": "2.*,<2.3"
-            },
-            "time": "1353061581",
-            "type": "symfony-bundle",
-            "installation-source": "source",
-            "autoload": {
-                "psr-0": {
-                    "Knp\\Bundle\\PaginatorBundle": ""
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "KnpLabs Team",
-                    "homepage": "http://knplabs.com"
-                },
-                {
-                    "name": "Symfony2 Community",
-                    "homepage": "http://github.com/KnpLabs/KnpPaginatorBundle/contributors"
-                }
-            ],
-            "description": "Paginator bundle for Symfony2 to automate pagination and simplify sorting and other features",
-            "homepage": "http://github.com/KnpLabs/KnpPaginatorBundle",
-            "keywords": [
-                "Symfony2",
-                "pager",
-                "knp",
-                "knplabs",
-                "paginator",
-                "pagination",
-                "bundle"
-            ]
-        },
-        {
             "name": "knplabs/rad-bundle",
             "version": "dev-develop",
             "target-dir": "Knp/RadBundle",
             "source": {
                 "type": "git",
                 "url": "git://github.com/KnpLabs/KnpRadBundle.git",
-                "reference": "bb3fd853b955f711a30be03221ddfaa51a28703c"
+                "reference": "bfdc33a3b62a16f3e9e55c141eb5ac6b4b68fcc7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/KnpLabs/KnpRadBundle/archive/bb3fd853b955f711a30be03221ddfaa51a28703c.zip",
-                "reference": "bb3fd853b955f711a30be03221ddfaa51a28703c",
+                "url": "https://github.com/KnpLabs/KnpRadBundle/archive/bfdc33a3b62a16f3e9e55c141eb5ac6b4b68fcc7.zip",
+                "reference": "bfdc33a3b62a16f3e9e55c141eb5ac6b4b68fcc7",
                 "shasum": ""
             },
             "require": {
@@ -672,7 +447,7 @@
                 "symfony/swiftmailer-bundle": "To take advantage of the Rad mailer logger in your tests",
                 "doctrine/orm": "To take advantage of the Rad password hash updater listener"
             },
-            "time": "1353922554",
+            "time": "1353932217",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -1249,7 +1024,7 @@
                 "propel/propel1": "dev-master",
                 "monolog/monolog": "1.*"
             },
-            "time": "2012-11-26 10:27:20",
+            "time": "1353925640",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1862,8 +1637,6 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "mopa/bootstrap-bundle": 20,
-        "knplabs/knp-paginator-bundle": 20,
-        "knplabs/knp-menu-bundle": 20,
         "knplabs/rad-bundle": 20,
         "phpspec/phpspec2": 20
     }
