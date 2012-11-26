@@ -4,19 +4,19 @@
 # Be more verbose by uncommenting the following line
 # logger.level = Logger::MAX_LEVEL
 
-set :application, "hellobell"
-set :domain,      "95.142.160.33"
-set :deploy_to,   "/var/www/demo"
-set :app_path,    "app"
-set :user,        "root"
+set :application, ""
+set :domain,      ""
+set :deploy_to,   ""
+set :app_path,    ""
+set :user,        ""
 
 role :web,        domain
 role :app,        domain
 role :db,         domain, :primary => true
 
 set :scm,         :git
-set :repository,  "git@github.com:KnpLabs/HelloBell.git"
-set :branch,      "demo"
+set :repository,  ""
+set :branch,      ""
 set :deploy_via,  :remote_cache
 
 ssh_options[:forward_agent] = true
@@ -29,7 +29,7 @@ set :webserver_user,    "www-data"
 set :permission_method, :acl
 
 set :shared_files,    ["app/config/parameters.yml", "web/.htaccess", "web/robots.txt"]
-set :shared_children, ["app/logs", "web/uploads", "web/assets", "app/Resources/blacklist"]
+set :shared_children, ["app/logs"]
 
 set :model_manager, "doctrine"
 
