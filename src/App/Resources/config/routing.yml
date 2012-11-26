@@ -7,3 +7,6 @@
 # resources:
 #     resource: "@App/Resources/config/resource_routing.yml"
 #     type:     "rad_convention"
+homepage:
+    pattern: /
+    defaults: { _controller: FrameworkBundle:Template:template, template: 'App::homepage.html.twig' }
