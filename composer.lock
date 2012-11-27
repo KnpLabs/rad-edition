@@ -1,5 +1,5 @@
 {
-    "hash": "bef481ec1f3fcd9a2be0caf27020665e",
+    "hash": "a57889b295941b222425e41a34d85752",
     "packages": [
         {
             "name": "doctrine/common",
@@ -420,12 +420,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/KnpLabs/KnpRadBundle.git",
-                "reference": "bfdc33a3b62a16f3e9e55c141eb5ac6b4b68fcc7"
+                "reference": "d1bf2d921b859a2ef6a6dc4689f3f00bee061d2c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/KnpLabs/KnpRadBundle/archive/bfdc33a3b62a16f3e9e55c141eb5ac6b4b68fcc7.zip",
-                "reference": "bfdc33a3b62a16f3e9e55c141eb5ac6b4b68fcc7",
+                "url": "https://github.com/KnpLabs/KnpRadBundle/archive/d1bf2d921b859a2ef6a6dc4689f3f00bee061d2c.zip",
+                "reference": "d1bf2d921b859a2ef6a6dc4689f3f00bee061d2c",
                 "shasum": ""
             },
             "require": {
@@ -447,7 +447,7 @@
                 "symfony/swiftmailer-bundle": "To take advantage of the Rad mailer logger in your tests",
                 "doctrine/orm": "To take advantage of the Rad password hash updater listener"
             },
-            "time": "1353932217",
+            "time": "1354034370",
             "type": "library",
             "installation-source": "source",
             "autoload": {
