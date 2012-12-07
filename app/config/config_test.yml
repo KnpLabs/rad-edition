@@ -15,3 +15,5 @@ swiftmailer:
 
 knp_rad:
     mailer_logger: true
+    listener:
+        exception_rethrow: true
