@@ -14,6 +14,7 @@ swiftmailer:
     disable_delivery: true
 
 knp_rad:
-    mailer_logger: true
+    mailer:
+        logger: true
     listener:
         exception_rethrow: true
