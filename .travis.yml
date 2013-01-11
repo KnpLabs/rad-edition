@@ -29,4 +29,5 @@ notifications:
     # hipchat: token@room
 
 script:
-    - bin/phpspec run -fpretty --verbose && bin/behat --no-snippets --verbose
+    - bin/phpspec run -fpretty --verbose
+    - bin/behat --no-snippets --verbose
