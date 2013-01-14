@@ -15,6 +15,7 @@ before_script:
     # - sudo apt-get install -y --force-yes apache2 libapache2-mod-php5
     # - sudo sed -i -e "s,/var/www,$(pwd)/web,g" /etc/apache2/sites-available/default
     # - sudo /etc/init.d/apache2 restart
+    # - export MINK_EXTENSION_PARAMS='base_url=http://localhost/app_test.php'
 
     # If you use selenium in your feature suite:
     # - export DISPLAY=:99
