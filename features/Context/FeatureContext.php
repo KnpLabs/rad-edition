@@ -44,7 +44,7 @@ class FeatureContext extends RawMinkContext implements KernelAwareInterface
      */
     private function getContainer()
     {
-        $this->kernel->getContainer();
+        return $this->kernel->getContainer();
     }
 
     /**
