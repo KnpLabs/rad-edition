@@ -1,12 +1,4 @@
-# homepage:
-#     pattern:      /
-#     defaults:     { _controller: App:Default:index }
-
-# Application resources
-
-resources:
-    resource: "@App/Resources/config/resource_routing.yml"
-    type:     "rad_convention"
+# https://github.com/KnpLabs/geekweek12/wiki/Routing
 
 homepage:
     pattern: /
