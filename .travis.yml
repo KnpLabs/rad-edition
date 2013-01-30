@@ -2,7 +2,6 @@ language: php
 php:      [ 5.3, 5.4 ]
 
 before_script:
-    - cp app/config/parameters.yml.dist app/config/parameters.yml
     - composer install --dev --prefer-dist > /dev/null
     - app/console do:da:cr -e=test > /dev/null
     - app/console do:sc:cr -e=test > /dev/null
