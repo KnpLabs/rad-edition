@@ -1,11 +1,8 @@
+app/config/parameters.yml
 app/*\.cache
 app/cache/*
 app/logs/*
-app/config/parameters.yml
-app/config/config_*_local.yml
 web/bundles/*
 web/css/*
 web/js/*
-bin/*
 vendor/*
-*tags
