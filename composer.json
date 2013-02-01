@@ -1,6 +1,7 @@
 {
     "name": "knplabs/rad-edition",
-    "description": "The \"KnpLabs Rad Edition\"",
+    "description": "The \"KnpLabs Symfony2 Rad Edition\"",
+    "keywords": ["Symfony2", "Symfony2 Rad Edition", "Symfony2 Distribution"],
     "license":     "MIT",
     "authors": [
         {
