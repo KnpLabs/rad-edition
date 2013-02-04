@@ -36,6 +36,5 @@ notifications:
     # hipchat: token@room
 
 script:
-    - phpunit -c app src/
     - bin/phpspec run -fpretty --verbose
     - bin/behat --no-snippets --verbose
