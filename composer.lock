@@ -385,18 +385,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fzaninotto/Faker",
-                "reference": "85e375431996868ff2c8c866b47eac57d43e7c59"
+                "reference": "9fe1a478ad9b7f3ecf8a09e27e01127a37c5bd36"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/85e375431996868ff2c8c866b47eac57d43e7c59",
-                "reference": "85e375431996868ff2c8c866b47eac57d43e7c59",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/9fe1a478ad9b7f3ecf8a09e27e01127a37c5bd36",
+                "reference": "9fe1a478ad9b7f3ecf8a09e27e01127a37c5bd36",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2013-02-04 09:56:26",
+            "time": "2013-02-06 07:43:50",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -431,12 +431,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/KnpLabs/KnpRadBundle.git",
-                "reference": "e3fc7daa2f3ce2a34f42e8abfc55c0a2a80c69d5"
+                "reference": "96594cfc0ca880a766e51f9da04201677df723f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/KnpRadBundle/zipball/e3fc7daa2f3ce2a34f42e8abfc55c0a2a80c69d5",
-                "reference": "e3fc7daa2f3ce2a34f42e8abfc55c0a2a80c69d5",
+                "url": "https://api.github.com/repos/KnpLabs/KnpRadBundle/zipball/96594cfc0ca880a766e51f9da04201677df723f2",
+                "reference": "96594cfc0ca880a766e51f9da04201677df723f2",
                 "shasum": ""
             },
             "require": {
@@ -459,7 +459,7 @@
                 "symfony/security": "To take advantage of the Rad User Interface",
                 "symfony/swiftmailer-bundle": "To take advantage of the Rad mailer logger in your tests"
             },
-            "time": "2013-02-05 15:16:14",
+            "time": "2013-02-06 14:56:42",
             "type": "library",
             "autoload": {
                 "psr-0": {
