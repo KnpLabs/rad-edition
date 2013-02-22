@@ -1,5 +1,5 @@
 {
-    "hash": "e31bee74a69eb8b987cb0252fad6f2dd",
+    "hash": "26ddf1a258a51662e54865d0bda3817f",
     "packages": [
         {
             "name": "doctrine/common",
@@ -41,7 +41,7 @@
                     "homepage": "http://www.jwage.com/"
                 },
                 {
-                    "name": "Guilherme Blanco",
+                    "name": "Christoph Dorn",
                     "email": "guilhermeblanco@gmail.com",
                     "homepage": "http://www.instaclick.com"
                 },
@@ -54,7 +54,7 @@
                     "email": "kontakt@beberlei.de"
                 },
                 {
-                    "name": "Johannes Schmitt",
+                    "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
                     "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
@@ -63,11 +63,11 @@
             "description": "Common Library for Doctrine projects",
             "homepage": "http://www.doctrine-project.org",
             "keywords": [
-                "collections",
-                "spl",
-                "eventmanager",
                 "annotations",
-                "persistence"
+                "collections",
+                "eventmanager",
+                "persistence",
+                "spl"
             ]
         },
         {
@@ -76,27 +76,27 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/data-fixtures.git",
-                "reference": "50e7e644984f17038224f6fcd02c2b7c20147980"
+                "reference": "689bc2ae2a41dff1107d9d50e2daa4c349222869"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/data-fixtures/zipball/50e7e644984f17038224f6fcd02c2b7c20147980",
-                "reference": "50e7e644984f17038224f6fcd02c2b7c20147980",
+                "url": "https://api.github.com/repos/doctrine/data-fixtures/zipball/689bc2ae2a41dff1107d9d50e2daa4c349222869",
+                "reference": "689bc2ae2a41dff1107d9d50e2daa4c349222869",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.2",
-                "doctrine/common": ">=2.2,<2.5-dev"
+                "doctrine/common": ">=2.2,<2.5-dev",
+                "php": ">=5.3.2"
             },
             "require-dev": {
                 "doctrine/orm": ">=2.2,<2.5-dev"
             },
             "suggest": {
-                "doctrine/orm": "For loading ORM fixtures",
                 "doctrine/mongodb-odm": "For loading MongoDB ODM fixtures",
+                "doctrine/orm": "For loading ORM fixtures",
                 "doctrine/phpcr-odm": "For loading PHPCR ODM fixtures"
             },
-            "time": "2013-01-05 13:05:52",
+            "time": "2013-02-12 02:52:36",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -140,8 +140,8 @@
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.2",
-                "doctrine/common": "2.3.*"
+                "doctrine/common": "2.3.*",
+                "php": ">=5.3.2"
             },
             "time": "2013-01-07 20:03:43",
             "type": "library",
@@ -166,7 +166,7 @@
                     "homepage": "http://www.jwage.com/"
                 },
                 {
-                    "name": "Guilherme Blanco",
+                    "name": "Christoph Dorn",
                     "email": "guilhermeblanco@gmail.com",
                     "homepage": "http://www.instaclick.com"
                 },
@@ -183,8 +183,8 @@
             "homepage": "http://www.doctrine-project.org",
             "keywords": [
                 "database",
-                "persistence",
                 "dbal",
+                "persistence",
                 "queryobject"
             ]
         },
@@ -204,15 +204,15 @@
                 "shasum": ""
             },
             "require": {
+                "doctrine/dbal": ">=2.2,<2.4-dev",
                 "php": ">=5.3.2",
-                "symfony/framework-bundle": "2.1.*",
                 "symfony/doctrine-bridge": "2.1.*",
-                "doctrine/dbal": ">=2.2,<2.4-dev"
+                "symfony/framework-bundle": "2.1.*"
             },
             "require-dev": {
                 "doctrine/orm": ">=2.2,<2.4-dev",
-                "symfony/yaml": "2.1.*",
-                "symfony/validator": "2.1.*"
+                "symfony/validator": "2.1.*",
+                "symfony/yaml": "2.1.*"
             },
             "suggest": {
                 "doctrine/orm": "The Doctrine ORM integration is optional in the bundle."
@@ -251,33 +251,39 @@
             "homepage": "http://www.doctrine-project.org",
             "keywords": [
                 "database",
+                "dbal",
                 "orm",
-                "persistence",
-                "dbal"
+                "persistence"
             ]
         },
         {
             "name": "doctrine/doctrine-fixtures-bundle",
-            "version": "v2.1.0-ALPHA",
+            "version": "dev-master",
             "target-dir": "Doctrine/Bundle/FixturesBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/DoctrineFixturesBundle.git",
-                "reference": "v2.1.0-ALPHA"
+                "reference": "275540d96599baec19fa3292c4d06c5cd4eefd06"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/DoctrineFixturesBundle/zipball/v2.1.0-ALPHA",
-                "reference": "v2.1.0-ALPHA",
+                "url": "https://api.github.com/repos/doctrine/DoctrineFixturesBundle/zipball/275540d96599baec19fa3292c4d06c5cd4eefd06",
+                "reference": "275540d96599baec19fa3292c4d06c5cd4eefd06",
                 "shasum": ""
             },
             "require": {
+                "doctrine/data-fixtures": "*",
+                "doctrine/doctrine-bundle": ">=1.0,<2.0",
                 "php": ">=5.3.2",
-                "symfony/symfony": ">=2.0",
-                "doctrine/data-fixtures": "*"
+                "symfony/doctrine-bridge": ">=2.1.0,<2.3-dev"
             },
-            "time": "2012-01-18 08:33:12",
+            "time": "2013-02-12 11:13:27",
             "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.1.x-dev"
+                }
+            },
             "autoload": {
                 "psr-0": {
                     "Doctrine\\Bundle\\FixturesBundle": ""
@@ -304,8 +310,8 @@
             "description": "Symfony DoctrineFixturesBundle",
             "homepage": "http://www.doctrine-project.org",
             "keywords": [
-                "persistence",
-                "Fixture"
+                "Fixture",
+                "persistence"
             ]
         },
         {
@@ -323,9 +329,9 @@
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.2",
-                "ext-pdo": "*",
                 "doctrine/dbal": "2.3.*",
+                "ext-pdo": "*",
+                "php": ">=5.3.2",
                 "symfony/console": "2.*"
             },
             "suggest": {
@@ -418,9 +424,9 @@
             ],
             "description": "Faker is a PHP library that generates fake data for you.",
             "keywords": [
+                "data",
                 "faker",
-                "fixtures",
-                "data"
+                "fixtures"
             ]
         },
         {
@@ -429,38 +435,36 @@
             "target-dir": "Knp/RadBundle",
             "source": {
                 "type": "git",
-                "url": "git://github.com/KnpLabs/KnpRadBundle.git",
-                "reference": "759d786b95b82904b0a75ae2d9a7c05ae1f3b60d"
+                "url": "https://github.com/KnpLabs/KnpRadBundle.git",
+                "reference": "14b81e4652e0979b7ed4917d761ee03810dbf151"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/KnpLabs/KnpRadBundle/archive/759d786b95b82904b0a75ae2d9a7c05ae1f3b60d.zip",
-                "reference": "759d786b95b82904b0a75ae2d9a7c05ae1f3b60d",
+                "url": "https://api.github.com/repos/KnpLabs/KnpRadBundle/zipball/14b81e4652e0979b7ed4917d761ee03810dbf151",
+                "reference": "14b81e4652e0979b7ed4917d761ee03810dbf151",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3",
-                "symfony/framework-bundle": ">=2.1",
+                "fzaninotto/faker": "*",
                 "nelmio/alice": "*",
-                "fzaninotto/faker": "*"
+                "php": ">=5.3.3",
+                "symfony/symfony": "2.1.*"
             },
             "require-dev": {
+                "doctrine/doctrine-fixtures-bundle": "dev-master",
+                "doctrine/orm": ">=2.2.3,<3.0",
                 "phpspec/phpspec2": "dev-develop",
-                "symfony/form": ">=2.1",
-                "symfony/security": ">=2.1",
                 "symfony/swiftmailer-bundle": "2.1.*",
-                "doctrine/orm": ">=2.2.3,<2.4-dev",
-                "doctrine/doctrine-fixtures-bundle": "*",
-                "twig/twig": "*"
+                "twig/twig": ">=1.11.0,<2.0"
             },
             "suggest": {
+                "doctrine/doctrine-fixtures-bundle": "To Take advantage of the Rad Doctrine AbstractFixture",
+                "doctrine/orm": "To take advantage of the Rad password hash updater listener",
                 "symfony/form": "To take advantage of the Rad Form Manager",
                 "symfony/security": "To take advantage of the Rad User Interface",
-                "doctrine/doctrine-fixtures-bundle": "To Take advantage of the Rad Doctrine AbstractFixture",
-                "symfony/swiftmailer-bundle": "To take advantage of the Rad mailer logger in your tests",
-                "doctrine/orm": "To take advantage of the Rad password hash updater listener"
+                "symfony/swiftmailer-bundle": "To take advantage of the Rad mailer logger in your tests"
             },
-            "time": "2013-01-30 10:25:52",
+            "time": "2013-02-22 10:43:04",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -484,38 +488,39 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "http://github.com/kriswallsmith/assetic.git",
-                "reference": "faf3b245977d8bc06c9da4710dbcad37756993a9"
+                "url": "https://github.com/kriswallsmith/assetic.git",
+                "reference": "v1.1.0-alpha3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/faf3b245977d8bc06c9da4710dbcad37756993a9",
-                "reference": "faf3b245977d8bc06c9da4710dbcad37756993a9",
+                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/v1.1.0-alpha3",
+                "reference": "v1.1.0-alpha3",
                 "shasum": ""
             },
             "require": {
-                "symfony/process": ">=2.1.0,<2.3-dev",
-                "php": ">=5.3.1"
+                "php": ">=5.3.1",
+                "symfony/process": ">=2.1.0,<2.3-dev"
             },
             "require-dev": {
-                "twig/twig": ">=1.6.0,<2.0",
+                "cssmin/cssmin": "*",
+                "joliclic/javascript-packer": "*",
+                "kamicane/packager": "*",
                 "leafo/lessphp": "*",
                 "leafo/scssphp": "*",
-                "ptachoire/cssembed": "*",
                 "leafo/scssphp-compass": "*",
-                "cssmin/cssmin": "*",
                 "mrclay/minify": "*",
-                "kamicane/packager": "*",
-                "joliclic/javascript-packer": "*"
+                "phpunit/phpunit": "3.7.*",
+                "ptachoire/cssembed": "*",
+                "twig/twig": ">=1.6.0,<2.0"
             },
             "suggest": {
-                "twig/twig": "Assetic provides the integration with the Twig templating engine",
                 "leafo/lessphp": "Assetic provides the integration with the lessphp LESS compiler",
                 "leafo/scssphp": "Assetic provides the integration with the scssphp SCSS compiler",
+                "leafo/scssphp-compass": "Assetic provides the integration with the SCSS compass plugin",
                 "ptachoire/cssembed": "Assetic provides the integration with phpcssembed to embed data uris",
-                "leafo/scssphp-compass": "Assetic provides the integration with the SCSS compass plugin"
+                "twig/twig": "Assetic provides the integration with the Twig templating engine"
             },
-            "time": "2013-01-31 17:45:10",
+            "time": "2013-02-18 16:17:57",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -570,9 +575,9 @@
                 "mlehner/gelf-php": "1.0.*"
             },
             "suggest": {
-                "mlehner/gelf-php": "Allow sending log messages to a GrayLog2 server",
                 "ext-amqp": "Allow sending log messages to an AMQP server (1.0+ required)",
-                "ext-mongo": "Allow sending log messages to a MongoDB server"
+                "ext-mongo": "Allow sending log messages to a MongoDB server",
+                "mlehner/gelf-php": "Allow sending log messages to a GrayLog2 server"
             },
             "time": "2012-08-29 11:53:20",
             "type": "library",
@@ -612,26 +617,26 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phiamo/MopaBootstrapBundle.git",
-                "reference": "ea4d0840e99bc3f676bf4ae71625b6ebcddecb82"
+                "reference": "2dd90d719ca3b6a29abeabe93665f61f920ba1bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phiamo/MopaBootstrapBundle/zipball/ea4d0840e99bc3f676bf4ae71625b6ebcddecb82",
-                "reference": "ea4d0840e99bc3f676bf4ae71625b6ebcddecb82",
+                "url": "https://api.github.com/repos/phiamo/MopaBootstrapBundle/zipball/2dd90d719ca3b6a29abeabe93665f61f920ba1bc",
+                "reference": "2dd90d719ca3b6a29abeabe93665f61f920ba1bc",
                 "shasum": ""
             },
             "require": {
-                "mopa/composer-bridge": "dev-master",
+                "mopa/composer-bridge": "v1.0.0",
                 "symfony/symfony": ">=2.1,<2.3-dev"
             },
             "suggest": {
-                "knplabs/knp-paginator-bundle": "dev-master",
                 "craue/formflow-bundle": "dev-master",
-                "twitter/bootstrap": "2.0.*",
+                "jlong/sass-twitter-bootstrap": "dev-master",
                 "knplabs/knp-menu-bundle": "1.1.*",
-                "jlong/sass-twitter-bootstrap": "dev-master"
+                "knplabs/knp-paginator-bundle": "dev-master",
+                "twitter/bootstrap": "2.0.*"
             },
-            "time": "2013-01-09 16:27:46",
+            "time": "2013-02-20 14:19:39",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -660,16 +665,16 @@
             ],
             "description": "Easy integration of twitters bootstrap into symfony2",
             "keywords": [
-                "form",
-                "extra form",
                 "bootstrap",
                 "bootstrap form",
+                "extra form",
+                "form",
                 "template"
             ]
         },
         {
             "name": "mopa/composer-bridge",
-            "version": "dev-master",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "git://github.com/phiamo/MopaComposerBridge.git",
@@ -677,7 +682,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phiamo/MopaComposerBridge/zipball/v1.0.0",
+                "url": "https://github.com/phiamo/MopaComposerBridge/archive/v1.0.0.zip",
                 "reference": "v1.0.0",
                 "shasum": ""
             },
@@ -728,14 +733,14 @@
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3",
                 "fzaninotto/faker": ">=1.0,<2.0",
+                "php": ">=5.3",
                 "symfony/yaml": ">=2.0,<3.0"
             },
             "require-dev": {
                 "doctrine/common": ">=2.3,<3.0",
-                "symfony/form": ">=2.1,<3.0",
-                "phpunit/phpunit": "3.7.*"
+                "phpunit/phpunit": "3.7.*",
+                "symfony/form": ">=2.1,<3.0"
             },
             "time": "2013-01-22 10:49:48",
             "type": "library",
@@ -761,10 +766,10 @@
             ],
             "description": "Expressive fixtures generator",
             "keywords": [
-                "orm",
+                "Fixture",
                 "data",
-                "test",
-                "Fixture"
+                "orm",
+                "test"
             ]
         },
         {
@@ -809,8 +814,8 @@
             ],
             "description": "The base bundle for the Symfony Distributions",
             "keywords": [
-                "distribution",
-                "configuration"
+                "configuration",
+                "distribution"
             ]
         },
         {
@@ -864,37 +869,37 @@
         },
         {
             "name": "symfony/assetic-bundle",
-            "version": "v2.1.0",
+            "version": "v2.1.1",
             "target-dir": "Symfony/Bundle/AsseticBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/AsseticBundle",
-                "reference": "v2.1.0-RC2"
+                "reference": "v2.1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/AsseticBundle/zipball/v2.1.0-RC2",
-                "reference": "v2.1.0-RC2",
+                "url": "https://api.github.com/repos/symfony/AsseticBundle/zipball/v2.1.1",
+                "reference": "v2.1.1",
                 "shasum": ""
             },
             "require": {
+                "kriswallsmith/assetic": "1.1.*",
                 "php": ">=5.3.0",
-                "symfony/framework-bundle": "2.1.*",
-                "kriswallsmith/assetic": "1.1.*"
+                "symfony/framework-bundle": ">=2.1.0,<2.3-dev"
             },
             "require-dev": {
-                "symfony/twig-bundle": "2.1.*",
-                "symfony/console": "2.1.*",
-                "symfony/class-loader": "2.1.*",
-                "symfony/yaml": "2.1.*",
-                "symfony/form": "2.1.*",
-                "symfony/dom-crawler": "2.1.*",
-                "symfony/css-selector": "2.1.*"
+                "symfony/class-loader": ">=2.1.0,<2.3-dev",
+                "symfony/console": ">=2.1.0,<2.3-dev",
+                "symfony/css-selector": ">=2.1.0,<2.3-dev",
+                "symfony/dom-crawler": ">=2.1.0,<2.3-dev",
+                "symfony/form": ">=2.1.0,<2.3-dev",
+                "symfony/twig-bundle": ">=2.1.0,<2.3-dev",
+                "symfony/yaml": ">=2.1.0,<2.3-dev"
             },
             "suggest": {
-                "symfony/twig-bundle": "2.1.*"
+                "symfony/twig-bundle": ">=2.1.0,<2.3-dev"
             },
-            "time": "2012-08-28 03:22:44",
+            "time": "2013-01-31 17:56:17",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -941,15 +946,15 @@
                 "shasum": ""
             },
             "require": {
+                "monolog/monolog": ">=1.0,<1.3-dev",
                 "php": ">=5.3.2",
-                "symfony/monolog-bridge": ">=2.1.0,<2.3-dev",
-                "symfony/dependency-injection": ">=2.1.0,<2.3-dev",
                 "symfony/config": ">=2.1.0,<2.3-dev",
-                "monolog/monolog": ">=1.0,<1.3-dev"
+                "symfony/dependency-injection": ">=2.1.0,<2.3-dev",
+                "symfony/monolog-bridge": ">=2.1.0,<2.3-dev"
             },
             "require-dev": {
-                "symfony/yaml": ">=2.1.0,<2.3-dev",
-                "symfony/config": ">=2.1.0,<2.3-dev"
+                "symfony/config": ">=2.1.0,<2.3-dev",
+                "symfony/yaml": ">=2.1.0,<2.3-dev"
             },
             "time": "2013-01-07 10:57:41",
             "type": "symfony-bundle",
@@ -1005,9 +1010,9 @@
                 "symfony/swiftmailer-bridge": ">=2.1.0,<2.3-dev"
             },
             "require-dev": {
+                "symfony/config": ">=2.1.0,<2.3-dev",
                 "symfony/dependency-injection": ">=2.1.0,<2.3-dev",
                 "symfony/http-kernel": ">=2.1.0,<2.3-dev",
-                "symfony/config": ">=2.1.0,<2.3-dev",
                 "symfony/yaml": ">=2.1.0,<2.3-dev"
             },
             "time": "2013-01-04 17:04:29",
@@ -1054,50 +1059,50 @@
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3",
                 "doctrine/common": ">2.2,<2.4-dev",
+                "php": ">=5.3.3",
                 "twig/twig": ">=1.9.1,<2.0-dev"
             },
             "replace": {
-                "symfony/doctrine-bridge": "self.version",
-                "symfony/monolog-bridge": "self.version",
-                "symfony/propel1-bridge": "self.version",
-                "symfony/swiftmailer-bridge": "self.version",
-                "symfony/twig-bridge": "self.version",
-                "symfony/framework-bundle": "self.version",
-                "symfony/security-bundle": "self.version",
-                "symfony/twig-bundle": "self.version",
-                "symfony/web-profiler-bundle": "self.version",
                 "symfony/browser-kit": "self.version",
                 "symfony/class-loader": "self.version",
                 "symfony/config": "self.version",
                 "symfony/console": "self.version",
                 "symfony/css-selector": "self.version",
                 "symfony/dependency-injection": "self.version",
+                "symfony/doctrine-bridge": "self.version",
                 "symfony/dom-crawler": "self.version",
                 "symfony/event-dispatcher": "self.version",
                 "symfony/filesystem": "self.version",
                 "symfony/finder": "self.version",
                 "symfony/form": "self.version",
+                "symfony/framework-bundle": "self.version",
                 "symfony/http-foundation": "self.version",
                 "symfony/http-kernel": "self.version",
                 "symfony/locale": "self.version",
+                "symfony/monolog-bridge": "self.version",
                 "symfony/options-resolver": "self.version",
                 "symfony/process": "self.version",
+                "symfony/propel1-bridge": "self.version",
                 "symfony/routing": "self.version",
                 "symfony/security": "self.version",
+                "symfony/security-bundle": "self.version",
                 "symfony/serializer": "self.version",
+                "symfony/swiftmailer-bridge": "self.version",
                 "symfony/templating": "self.version",
                 "symfony/translation": "self.version",
+                "symfony/twig-bridge": "self.version",
+                "symfony/twig-bundle": "self.version",
                 "symfony/validator": "self.version",
+                "symfony/web-profiler-bundle": "self.version",
                 "symfony/yaml": "self.version"
             },
             "require-dev": {
+                "doctrine/data-fixtures": "1.0.*",
                 "doctrine/dbal": ">=2.2,<2.4-dev",
                 "doctrine/orm": ">=2.2.3,<2.4-dev",
-                "doctrine/data-fixtures": "1.0.*",
-                "propel/propel1": "dev-master",
-                "monolog/monolog": ">=1.0,<1.3-dev"
+                "monolog/monolog": ">=1.0,<1.3-dev",
+                "propel/propel1": "dev-master"
             },
             "time": "2013-01-17 21:21:51",
             "type": "library",
@@ -1137,7 +1142,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/fabpot/Twig-extensions/archive/5c2d515d4624bdd588226d688173cf0399a4d8cf.zip",
+                "url": "https://api.github.com/repos/fabpot/Twig-extensions/zipball/5c2d515d4624bdd588226d688173cf0399a4d8cf",
                 "reference": "5c2d515d4624bdd588226d688173cf0399a4d8cf",
                 "shasum": ""
             },
@@ -1176,22 +1181,22 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.12.1",
+            "version": "v1.12.2",
             "source": {
                 "type": "git",
                 "url": "git://github.com/fabpot/Twig.git",
-                "reference": "v1.12.1"
+                "reference": "v1.12.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/fabpot/Twig/archive/v1.12.1.zip",
-                "reference": "v1.12.1",
+                "url": "https://api.github.com/repos/fabpot/Twig/zipball/v1.12.2",
+                "reference": "v1.12.2",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2.4"
             },
-            "time": "2013-01-15 20:03:52",
+            "time": "2013-02-09 18:21:53",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1240,20 +1245,20 @@
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.1",
                 "behat/gherkin": ">=2.2.4,<2.3-dev",
-                "symfony/console": ">=2.0,<2.3-dev",
+                "php": ">=5.3.1",
                 "symfony/config": ">=2.0,<2.3-dev",
+                "symfony/console": ">=2.0,<2.3-dev",
                 "symfony/dependency-injection": ">=2.0,<2.3-dev",
                 "symfony/event-dispatcher": ">=2.0,<2.3-dev",
+                "symfony/finder": ">=2.0,<2.3-dev",
                 "symfony/translation": ">=2.0,<2.3-dev",
-                "symfony/yaml": ">=2.0,<2.3-dev",
-                "symfony/finder": ">=2.0,<2.3-dev"
+                "symfony/yaml": ">=2.0,<2.3-dev"
             },
             "suggest": {
+                "behat/mink-extension": "for integration with Mink testing framework",
                 "behat/symfony2-extension": "for integration with Symfony2 web framework",
-                "behat/yii-extension": "for integration with Yii web framework",
-                "behat/mink-extension": "for integration with Mink testing framework"
+                "behat/yii-extension": "for integration with Yii web framework"
             },
             "time": "2013-01-27 14:45:41",
             "bin": [
@@ -1284,9 +1289,9 @@
             "description": "Scenario-oriented BDD framework for PHP 5.3",
             "homepage": "http://behat.org/",
             "keywords": [
-                "Symfony2",
                 "BDD",
-                "Behat"
+                "Behat",
+                "Symfony2"
             ]
         },
         {
@@ -1308,14 +1313,14 @@
                 "symfony/finder": ">=2.0,<2.3-dev"
             },
             "require-dev": {
-                "symfony/yaml": ">=2.0,<2.3-dev",
+                "symfony/config": ">=2.0,<2.3-dev",
                 "symfony/translation": ">=2.0,<2.3-dev",
-                "symfony/config": ">=2.0,<2.3-dev"
+                "symfony/yaml": ">=2.0,<2.3-dev"
             },
             "suggest": {
-                "symfony/yaml": "If you want to parse features, represented in YAML files",
+                "symfony/config": "If you want to use Config component to manage resources",
                 "symfony/translation": "If you want to use Symfony2 translations adapter",
-                "symfony/config": "If you want to use Config component to manage resources"
+                "symfony/yaml": "If you want to parse features, represented in YAML files"
             },
             "time": "2013-01-26 23:59:12",
             "type": "library",
@@ -1343,38 +1348,30 @@
             "description": "Gherkin DSL parser for PHP 5.3",
             "homepage": "http://behat.org/",
             "keywords": [
-                "Symfony2",
                 "BDD",
-                "parser",
+                "Behat",
                 "DSL",
-                "Behat"
+                "Symfony2",
+                "parser"
             ]
         },
         {
             "name": "behat/mink",
-            "version": "v1.4.0",
+            "version": "v1.4.2",
             "source": {
                 "type": "git",
-                "url": "git://github.com/Behat/Mink.git",
-                "reference": "v1.4.0"
+                "url": "https://github.com/Behat/Mink.git",
+                "reference": "v1.4.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Behat/Mink/zipball/v1.4.0",
-                "reference": "v1.4.0",
+                "url": "https://api.github.com/repos/Behat/Mink/zipball/v1.4.2",
+                "reference": "v1.4.2",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.1",
-                "symfony/css-selector": ">=2.0.0,<2.2.0-dev"
-            },
-            "require-dev": {
-                "behat/mink-goutte-driver": "*",
-                "behat/mink-sahi-driver": "*",
-                "behat/mink-selenium-driver": "*",
-                "behat/mink-selenium2-driver": "*",
-                "behat/mink-zombie-driver": "*",
-                "symfony/finder": ">=2.0.0,<2.2.0-dev"
+                "symfony/css-selector": ">=2.0,<2.3-dev"
             },
             "suggest": {
                 "behat/mink-goutte-driver": "to enable Goutte support",
@@ -1383,8 +1380,13 @@
                 "behat/mink-selenium2-driver": "to enable Selenium2 (webdriver support)",
                 "behat/mink-zombie-driver": "to enable Zombie.js support"
             },
-            "time": "2012-05-29 15:50:10",
+            "time": "2013-02-13 12:06:05",
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "1.4.x-dev"
+                }
+            },
             "autoload": {
                 "psr-0": {
                     "Behat\\Mink": "src/"
@@ -1404,32 +1406,41 @@
             "description": "Web acceptance testing framework for PHP 5.3",
             "homepage": "http://mink.behat.org/",
             "keywords": [
-                "testing",
                 "browser",
+                "testing",
                 "web"
             ]
         },
         {
             "name": "behat/mink-browserkit-driver",
-            "version": "v1.0.0",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
-                "url": "git://github.com/Behat/MinkBrowserKitDriver.git",
-                "reference": "v1.0.0"
+                "url": "https://github.com/Behat/MinkBrowserKitDriver.git",
+                "reference": "v1.0.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Behat/MinkBrowserKitDriver/zipball/v1.0.0",
-                "reference": "v1.0.0",
+                "url": "https://api.github.com/repos/Behat/MinkBrowserKitDriver/zipball/v1.0.2",
+                "reference": "v1.0.2",
                 "shasum": ""
             },
             "require": {
+                "behat/mink": ">=1.4,<1.5-dev",
                 "php": ">=5.3.1",
-                "symfony/browser-kit": ">=2.0.0,<2.2.0-dev",
-                "symfony/dom-crawler": ">=2.0.0,<2.2.0-dev"
+                "symfony/browser-kit": ">=2.0,<2.3-dev",
+                "symfony/dom-crawler": ">=2.0,<2.3-dev"
             },
-            "time": "2012-06-14 06:23:48",
+            "require-dev": {
+                "silex/silex": "@dev"
+            },
+            "time": "2013-02-17 15:44:44",
             "type": "mink-driver",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
             "autoload": {
                 "psr-0": {
                     "Behat\\Mink\\Driver": "src/"
@@ -1449,35 +1460,42 @@
             "description": "Symfony2 BrowserKit driver for Mink framework",
             "homepage": "http://mink.behat.org/",
             "keywords": [
+                "Mink",
                 "Symfony2",
-                "testing",
-                "browser"
+                "browser",
+                "testing"
             ]
         },
         {
             "name": "behat/mink-extension",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
-                "url": "git://github.com/Behat/MinkExtension.git",
-                "reference": "v1.0.0"
+                "url": "https://github.com/Behat/MinkExtension.git",
+                "reference": "v1.0.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Behat/MinkExtension/zipball/v1.0.0",
-                "reference": "v1.0.0",
+                "url": "https://api.github.com/repos/Behat/MinkExtension/zipball/v1.0.1",
+                "reference": "v1.0.1",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.2",
-                "behat/behat": ">=2.4.0,<2.5.0-dev",
-                "behat/mink": ">=1.4.0,<1.5.0-dev"
+                "behat/behat": ">=2.4,<2.5-dev",
+                "behat/mink": ">=1.4,<1.5-dev",
+                "php": ">=5.3.2"
             },
             "require-dev": {
-                "behat/mink-goutte-driver": "*"
+                "behat/mink-goutte-driver": "1.0.*",
+                "fabpot/goutte": "1.0.*@dev"
             },
-            "time": "2012-07-05 00:59:06",
+            "time": "2013-02-19 23:49:16",
             "type": "behat-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
             "autoload": {
                 "psr-0": {
                     "Behat\\MinkExtension": "src/"
@@ -1497,39 +1515,44 @@
             "description": "Mink extension for Behat",
             "homepage": "http://mink.behat.org",
             "keywords": [
-                "test",
                 "browser",
-                "web",
-                "gui"
+                "gui",
+                "test",
+                "web"
             ]
         },
         {
             "name": "behat/symfony2-extension",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
-                "url": "git://github.com/Behat/Symfony2Extension.git",
-                "reference": "v1.0.0"
+                "url": "https://github.com/Behat/Symfony2Extension.git",
+                "reference": "v1.0.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Behat/Symfony2Extension/zipball/v1.0.0",
-                "reference": "v1.0.0",
+                "url": "https://api.github.com/repos/Behat/Symfony2Extension/zipball/v1.0.1",
+                "reference": "v1.0.1",
                 "shasum": ""
             },
             "require": {
+                "behat/behat": ">=2.4,<2.5-dev",
                 "php": ">=5.3.2",
-                "behat/behat": ">=2.4.0,<2.5.0-dev",
-                "symfony/framework-bundle": ">=2.0.0,<2.2.0-dev"
+                "symfony/framework-bundle": ">=2.0,<2.3-dev"
             },
             "require-dev": {
-                "behat/mink": "1.4@stable",
-                "symfony/symfony": "dev-master",
-                "behat/mink-extension": "dev-master",
-                "behat/mink-browserkit-driver": "dev-master"
+                "behat/mink": ">=1.4,<2.5-dev",
+                "behat/mink-browserkit-driver": "1.0.*",
+                "behat/mink-extension": "1.0.*",
+                "symfony/symfony": ">=2.1,<2.3-dev"
             },
-            "time": "2012-07-05 01:02:55",
+            "time": "2013-02-20 00:10:12",
             "type": "behat-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
             "autoload": {
                 "psr-0": {
                     "Behat\\Symfony2Extension": "src/"
@@ -1549,9 +1572,9 @@
             "description": "Symfony2 framework extension for Behat",
             "homepage": "http://behat.org",
             "keywords": [
+                "BDD",
                 "framework",
-                "symfony",
-                "BDD"
+                "symfony"
             ]
         },
         {
@@ -1595,16 +1618,16 @@
             "description": "Mockery is a simple yet flexible PHP mock object framework for use in unit testing with PHPUnit, PHPSpec or any other testing framework. Its core goal is to offer a test double framework with a succint API capable of clearly defining all possible object operations and interactions using a human readable Domain Specific Language (DSL). Designed as a drop in alternative to PHPUnit's phpunit-mock-objects library, Mockery is easy to integrate with PHPUnit and can operate alongside phpunit-mock-objects without the World ending.",
             "homepage": "http://github.com/padraic/mockery",
             "keywords": [
-                "testing",
-                "library",
                 "BDD",
                 "TDD",
-                "test",
-                "mockery",
+                "library",
                 "mock",
+                "mock objects",
+                "mockery",
                 "stub",
+                "test",
                 "test double",
-                "mock objects"
+                "testing"
             ]
         },
         {
@@ -1617,7 +1640,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/phpspec/php-diff/archive/8d82ac415225fac373a4073ba14b1fe286aa2312.zip",
+                "url": "https://api.github.com/repos/phpspec/php-diff/zipball/8d82ac415225fac373a4073ba14b1fe286aa2312",
                 "reference": "8d82ac415225fac373a4073ba14b1fe286aa2312",
                 "shasum": ""
             },
@@ -1646,24 +1669,24 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/phpspec2.git",
-                "reference": "a38c887e80ee93a5a3de97d2090d9354d203d19f"
+                "reference": "8e841da15e21121c4c96ef81ec1975ef984b813f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/phpspec/phpspec2/archive/a38c887e80ee93a5a3de97d2090d9354d203d19f.zip",
-                "reference": "a38c887e80ee93a5a3de97d2090d9354d203d19f",
+                "url": "https://api.github.com/repos/phpspec/phpspec2/zipball/8e841da15e21121c4c96ef81ec1975ef984b813f",
+                "reference": "8e841da15e21121c4c96ef81ec1975ef984b813f",
                 "shasum": ""
             },
             "require": {
                 "mockery/mockery": "0.7.*",
-                "phpspec/php-diff": "*@dev",
                 "php": ">=5.3.3",
+                "phpspec/php-diff": "*@dev",
                 "symfony/console": ">=2.1,<3.0",
                 "symfony/event-dispatcher": ">=2.1,<3.0",
                 "symfony/finder": ">=2.1,<3.0",
                 "symfony/yaml": ">=2.1,<3.0"
             },
-            "time": "2013-01-29 10:39:48",
+            "time": "2013-02-08 11:19:58",
             "bin": [
                 "bin/phpspec"
             ],
@@ -1696,13 +1719,13 @@
             "description": "Specification-oriented BDD framework for PHP 5.3+",
             "homepage": "http://phpspec.net/",
             "keywords": [
-                "testing",
                 "BDD",
+                "SpecBDD",
                 "TDD",
                 "spec",
-                "tests",
-                "SpecBDD",
-                "specification"
+                "specification",
+                "testing",
+                "tests"
             ]
         }
     ],
@@ -1711,8 +1734,8 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
-        "twig/extensions": 20,
         "knplabs/rad-bundle": 20,
+        "twig/extensions": 20,
         "kriswallsmith/assetic": 20,
         "doctrine/doctrine-fixtures-bundle": 20,
         "doctrine/data-fixtures": 20,

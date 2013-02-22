@@ -14,7 +14,7 @@
         "symfony/symfony": "2.1.*",
         "symfony/swiftmailer-bundle": "2.1.*",
         "symfony/monolog-bundle": "2.1.*",
-        "doctrine/orm": "~2.2,>=2.2.3",
+        "doctrine/orm": "2.3.*",
         "doctrine/doctrine-bundle": "1.0.*",
         "sensio/distribution-bundle": "2.1.*",
         "knplabs/rad-bundle": "dev-develop",
