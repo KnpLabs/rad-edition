@@ -1,5 +1,6 @@
 app/config/parameters.yml
 app/*\.cache
+app/SymfonyRequirements.php
 app/cache/*
 app/logs/*
 web/bundles/*

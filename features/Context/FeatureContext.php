@@ -39,7 +39,7 @@ class FeatureContext extends RawMinkContext implements KernelAwareInterface
 
     /**
      * Returns Container instance.
-     * 
+     *
      * @return ContainerInterface
      */
     private function getContainer()
@@ -49,11 +49,11 @@ class FeatureContext extends RawMinkContext implements KernelAwareInterface
 
     /**
      * Generates url with Router.
-     * 
+     *
      * @param string  $route
      * @param array   $parameters
      * @param Boolean $absolute
-     * 
+     *
      * @return string
      */
     private function generateUrl($route, array $parameters = array(), $absolute = false)
@@ -63,13 +63,13 @@ class FeatureContext extends RawMinkContext implements KernelAwareInterface
 
     /**
      * Generate page url from name and parameters.
-     * 
+     *
      * @param string $page
      * @param array  $parameters
-     * 
+     *
      * @return string
      */
-    private function generatePageUrl($page, array $parameters = [])
+    private function generatePageUrl($page, array $parameters = array())
     {
         $parts = explode(' ', trim($page), 2);
         if (2 === count($parts)) {
