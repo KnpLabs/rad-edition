@@ -1,5 +1,5 @@
 {
-    "hash": "26ddf1a258a51662e54865d0bda3817f",
+    "hash": "10daa2fcd18fb8929627a7e9b8657345",
     "packages": [
         {
             "name": "doctrine/common",
@@ -431,17 +431,17 @@
         },
         {
             "name": "knplabs/rad-bundle",
-            "version": "dev-develop",
+            "version": "v2.0",
             "target-dir": "Knp/RadBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/KnpRadBundle.git",
-                "reference": "14b81e4652e0979b7ed4917d761ee03810dbf151"
+                "reference": "v2.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/KnpRadBundle/zipball/14b81e4652e0979b7ed4917d761ee03810dbf151",
-                "reference": "14b81e4652e0979b7ed4917d761ee03810dbf151",
+                "url": "https://api.github.com/repos/KnpLabs/KnpRadBundle/zipball/v2.0",
+                "reference": "v2.0",
                 "shasum": ""
             },
             "require": {
@@ -464,7 +464,7 @@
                 "symfony/security": "To take advantage of the Rad User Interface",
                 "symfony/swiftmailer-bundle": "To take advantage of the Rad mailer logger in your tests"
             },
-            "time": "2013-02-22 10:43:04",
+            "time": "2013-02-22 13:29:11",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -1734,7 +1734,6 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
-        "knplabs/rad-bundle": 20,
         "twig/extensions": 20,
         "kriswallsmith/assetic": 20,
         "doctrine/doctrine-fixtures-bundle": 20,
