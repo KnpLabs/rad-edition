@@ -8,13 +8,13 @@ before_script:
     # - sudo sed -i -e "s,/var/www,$(pwd)/web,g" /etc/apache2/sites-available/default
     # - export HOSTNAME=localhost
     # - export MINK_EXTENSION_PARAMS='base_url=http://$HOSTNAME/app_test.php'
-    
+
     # If your feature suite depends on specific domain name (change HOSTNAME parameter above):
     # - sudo sed -i -e "/DocumentRoot/i\ServerName $HOSTNAME" /etc/apache2/sites-available/default
     # - echo "127.0.0.1    $HOSTNAME" | sudo tee -a /etc/hosts
-    
+
     # - sudo /etc/init.d/apache2 restart
-  
+
     - composer install --dev --prefer-dist > /dev/null
     - app/console do:da:cr -e=test > /dev/null
     - app/console do:sc:cr -e=test > /dev/null
