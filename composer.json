@@ -3,6 +3,7 @@
     "description": "The \"KnpLabs Symfony2 Rad Edition\"",
     "keywords": ["Symfony2", "Symfony2 Rad Edition", "Symfony2 Distribution"],
     "license":     "MIT",
+    "homepage": "http://rad.knplabs.com",
     "authors": [
         {
             "name":     "Knplabs",
@@ -11,12 +12,12 @@
     ],
     "require": {
         "php": ">=5.3.3",
-        "symfony/symfony": "2.1.*",
-        "symfony/swiftmailer-bundle": "2.1.*",
-        "symfony/monolog-bundle": "2.1.*",
-        "doctrine/orm": "2.3.*",
-        "doctrine/doctrine-bundle": "1.0.*",
-        "sensio/distribution-bundle": "2.1.*",
+        "symfony/symfony": "2.2.*",
+        "symfony/swiftmailer-bundle": "2.2.*",
+        "symfony/monolog-bundle": "2.2.*",
+        "doctrine/orm": "~2.3",
+        "doctrine/doctrine-bundle": "1.2.*@alpha",
+        "sensio/distribution-bundle": "2.2.*",
         "knplabs/rad-bundle": "2.*",
 
         "twig/extensions": "1.0.*@dev",
