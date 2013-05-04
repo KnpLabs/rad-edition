@@ -3,6 +3,7 @@
     "description": "The \"KnpLabs Symfony2 Rad Edition\"",
     "keywords": ["Symfony2", "Symfony2 Rad Edition", "Symfony2 Distribution"],
     "license":     "MIT",
+    "type": "project",
     "homepage": "http://rad.knplabs.com",
     "authors": [
         {
