@@ -13,32 +13,25 @@
     ],
     "require": {
         "php": ">=5.3.3",
-        "symfony/symfony": "2.2.*",
-        "symfony/swiftmailer-bundle": "2.2.*",
-        "symfony/monolog-bundle": "2.2.*",
+        "symfony/symfony": "2.3.0 as 2.2-dev",
+        "symfony/swiftmailer-bundle": "~2.3",
+        "symfony/monolog-bundle": "~2.3",
         "doctrine/orm": "~2.3",
-        "doctrine/doctrine-bundle": "1.2.*@alpha",
+        "doctrine/doctrine-bundle": "1.2.*",
         "sensio/distribution-bundle": "2.2.*",
         "knplabs/rad-bundle": "2.*",
-
-        "twig/extensions": "1.0.*@dev",
-
-        "symfony/assetic-bundle": "2.1.*",
-        "kriswallsmith/assetic": "1.1.*@dev",
-
+        "twig/extensions": "1.0.*",
+        "symfony/assetic-bundle": "~2.3",
         "doctrine/doctrine-fixtures-bundle": "2.1.*@dev",
         "doctrine/data-fixtures": "1.0.*@dev",
-
-        "mopa/bootstrap-bundle": "2.1.*@dev",
-        "mopa/composer-bridge": "*@dev"
+        "mopa/bootstrap-bundle": "2.3.*@dev"
     },
     "require-dev": {
         "behat/behat": "2.4.*",
         "behat/symfony2-extension": "*",
         "behat/mink-extension": "*",
         "behat/mink-browserkit-driver": "*",
-        "phpspec/phpspec2": "dev-develop",
-        "phpspec/php-diff": "*@dev"
+        "phpspec/phpspec": "2.0.0-BETA4"
     },
     "config": {
         "bin-dir": "bin"
