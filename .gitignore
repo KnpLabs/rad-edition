@@ -1,10 +1,10 @@
 app/config/parameters.yml
 app/*\.cache
 app/SymfonyRequirements.php
-app/cache/*
-app/logs/*
-web/bundles/*
-web/css/*
-web/js/*
-vendor/*
-bin/*
+app/cache
+app/logs
+web/bundles
+web/css
+web/js
+vendor
+bin
