@@ -37,7 +37,8 @@
         "bin-dir": "bin"
     },
     "autoload": {
-        "psr-0": { "": "src/", "Context": "features/" }
+        "psr-0": { "": "src/", "Context": "features/" },
+        "files": ["app/Composer/RegisterBundle.php"]
     },
      "scripts": {
         "post-install-cmd": [
@@ -53,6 +54,12 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
+        ],
+        "post-package-install": [
+            "RegisterBundle::postPackageInstall"
+        ],
+        "post-package-uninstall": [
+            "RegisterBundle::postPackageInstall"
         ]
     },
     "extra": {

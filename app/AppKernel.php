@@ -2,6 +2,7 @@
 
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\Config\Loader\LoaderInterface;
+use Symfony\Component\HttpKernel\Bundle\BundleInterface;
 
 class AppKernel extends Kernel
 {
@@ -24,6 +25,24 @@ class AppKernel extends Kernel
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
             $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
+        }
+
+        $bundles = array_merge($bundles, $this->autoDiscoverBundles());
+
+        return $bundles;
+    }
+
+    private function autoDiscoverBundles()
+    {
+        $bundles = array();
+        foreach (new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator(__DIR__.'/bundles')) as $file) {
+            if (!$file->isFile()) {
+                continue;
+            }
+            $bundle = require $file->getRealPath();
+            if ($bundle instanceof BundleInterface) {
+                $bundles[] = $bundle;
+            }
         }
 
         return $bundles;
