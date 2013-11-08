@@ -22,7 +22,7 @@ class FeatureContext extends RawMinkContext implements KernelAwareInterface
      * @Given /^I am on the ([\w\s]+)( page)?$/
      * @When /^I go to the ([\w\s]+)( page)?$/
      */
-    public function iAmOnThePage($page)
+    public function iAmOnThePage($page, $parameters = array())
     {
         $this->getSession()->visit($this->generatePageUrl($page, $parameters));
     }
