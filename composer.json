@@ -13,25 +13,25 @@
     ],
     "require": {
         "php": ">=5.3.3",
-        "symfony/symfony": "~2.3",
+        "symfony/symfony": "~2.4",
         "symfony/swiftmailer-bundle": "~2.3",
-        "symfony/monolog-bundle": "~2.3",
-        "doctrine/orm": "~2.3",
-        "doctrine/doctrine-bundle": "1.2.*",
+        "symfony/monolog-bundle": "~2.4",
+        "doctrine/orm": "~2.4",
+        "doctrine/doctrine-bundle": "~1.2",
         "sensio/distribution-bundle": "2.3.*",
         "knplabs/rad-bundle": "2.3.1",
-        "twig/extensions": "1.0.*",
+        "twig/extensions": "~1.0",
         "symfony/assetic-bundle": "~2.3",
-        "doctrine/doctrine-fixtures-bundle": "2.1.*@dev",
-        "doctrine/data-fixtures": "1.0.*@dev",
-        "mopa/bootstrap-bundle": "2.3.*@dev"
+        "doctrine/doctrine-fixtures-bundle": "~2.1@dev",
+        "doctrine/data-fixtures": "~1.0@dev",
+        "mopa/bootstrap-bundle": "~2.3@dev"
     },
     "require-dev": {
-        "behat/behat": "2.4.*",
-        "behat/symfony2-extension": "*",
-        "behat/mink-extension": "*",
+        "behat/behat": "~3@dev",
+        "behat/mink-extension": "~2@dev",
         "behat/mink-browserkit-driver": "*",
-        "phpspec/phpspec": "2.0.0-BETA4"
+        "behat/mink-selenium2-driver": "*",
+        "phpspec/phpspec": "~2@dev"
     },
     "config": {
         "bin-dir": "bin"
