@@ -6,5 +6,9 @@ app/logs
 web/bundles
 web/css
 web/js
+web/front
+web/dist
+src/App/Resources/views/layout.prod.html.twig
+node_modules
 vendor
 bin

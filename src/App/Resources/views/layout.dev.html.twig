@@ -1,0 +1,22 @@
+{% extends '::base.html.twig' %}
+
+{% block headers %}
+    <title>{% block title %}{% block subtitle '' %} &mdash; KnpRadBundle{% endblock %}</title>
+    <meta name="description" content="{% block description '' %}">
+{% endblock headers %}
+
+{% block body %}
+    <div class="container">
+        {% block content '' %}
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <!-- build:js /front/scripts/vendor.js -->
+    <!-- bower:js -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js /front/scripts/client.js -->
+    <!-- endbuild -->
+{% endblock %}
