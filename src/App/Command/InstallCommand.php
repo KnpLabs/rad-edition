@@ -16,10 +16,16 @@ class InstallCommand extends ContainerAwareCommand
         $this
             ->setName('app:install')
             ->setDescription('Install and configure your application')
-            ->setDefinition([
-                new InputOption('no-fixtures', null, InputOption::VALUE_NONE, 'Don\'t load doctrine fixtures')
-            ])
-        ;
+            ->setDefinition(
+                array(
+                    new InputOption(
+                        'no-fixtures',
+                        null,
+                        InputOption::VALUE_NONE,
+                        'Don\'t load doctrine fixtures'
+                    )
+                )
+            );
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
@@ -28,8 +34,7 @@ class InstallCommand extends ContainerAwareCommand
         $output->writeln('');
 
         $this
-            ->setup($input, $output)
-        ;
+            ->setup($input, $output);
 
         $output->writeln('<info>Your application has been successfully installed.</info>');
     }
@@ -42,14 +47,15 @@ class InstallCommand extends ContainerAwareCommand
             ->runCommand('assetic:dump', $input, $output)
             ->runCommand(
                 'assets:install',
-                new ArrayInput([
-                    'command'   => 'assets:install',
-                    'target'    => 'web',
-                    '--symlink' => true,
-                ]),
+                new ArrayInput(
+                    array(
+                        'command' => 'assets:install',
+                        'target' => 'web',
+                        '--symlink' => true
+                    )
+                ),
                 $output
-            )
-        ;
+            );
 
         if (false === $input->getOption('no-fixtures')) {
             $this->runCommand('doctrine:fixtures:load', clone $input, $output);
@@ -62,7 +68,7 @@ class InstallCommand extends ContainerAwareCommand
 
     private function buildInput(Command $command, InputInterface $input)
     {
-        $result = [];
+        $result = array();
 
         foreach ($command->getDefinition()->getArguments() as $key => $value) {
             if ($input->hasArgument($key)) {
@@ -76,7 +82,7 @@ class InstallCommand extends ContainerAwareCommand
             }
         }
 
-        return new ArrayInput(array_merge($result, [ 'command' => $command->getName() ]));
+        return new ArrayInput(array_merge($result, array('command' => $command->getName())));
     }
 
     private function runCommand($command, InputInterface $input, OutputInterface $output)
