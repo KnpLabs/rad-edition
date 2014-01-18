@@ -5,6 +5,16 @@
     <meta name="description" content="{% block description '' %}">
 {% endblock headers %}
 
+{% block stylesheets %}
+    <!-- build:css /front/styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css /front/styles/app.css -->
+    <!-- endbuild -->
+{% endblock %}
+
 {% block body %}
     <div class="container">
         {% block content '' %}
@@ -17,6 +27,6 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-    <!-- build:js /front/scripts/client.js -->
+    <!-- build:js /front/scripts/app.js -->
     <!-- endbuild -->
 {% endblock %}

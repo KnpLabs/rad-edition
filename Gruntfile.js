@@ -57,6 +57,34 @@ module.exports = function (grunt) {
             }
         },
 
+        // configure compass
+        compass: {
+            options: {
+                sassDir: '<%= app.app %>/styles',
+                cssDir: '<%= app.app %>/styles',
+                generatedImagesDir: '<%= app.app %>/images/generated',
+                imagesDir: '<%= app.app %>/images',
+                javascriptsDir: '<%= app.app %>/scripts',
+                fontsDir: '<%= app.app %>/styles/fonts',
+                importPath: '<%= app.app %>/bower_components',
+                httpImagesPath: '/front/images',
+                httpGeneratedImagesPath: '/front/images/generated',
+                httpFontsPath: '/front/styles/fonts',
+                relativeAssets: false,
+                assetCacheBuster: false
+            },
+            dist: {
+                options: {
+                    generatedImagesDir: '<%= app.dist %>/images/generated'
+                }
+            },
+            server: {
+                options: {
+                    debugInfo: true
+                }
+            }
+        },
+
         // configure grunt copy
         copy: {
             app: {
@@ -90,7 +118,8 @@ module.exports = function (grunt) {
         // configure clean app
         clean: {
             app: ['<%= app.app %>'],
-            build: ['<%= app.build %>']
+            build: ['<%= app.build %>'],
+            scss: ['<%= app.app %>/styles/{,*/}*.{scss,sass}', '.sass-cache'],
         },
 
         // rename distribution files for browser cache supports
@@ -135,6 +164,22 @@ module.exports = function (grunt) {
                     copy: false
                 }
             }
+        },
+
+        // configure watcher
+        watch: {
+            js: {
+                files: '<%= app.src %>/scripts/{,*/}*.js',
+                tasks: ['install', 'jshint:scripts']
+            },
+            styles: {
+                files: '<%= app.src %>/styles/{,*/}*.{css,sass,scss}',
+                tasks: ['install']
+            },
+            bower: {
+                files: 'bower.json',
+                tasks: ['install']
+            }
         }
     });
 
@@ -145,6 +190,7 @@ module.exports = function (grunt) {
         'useminPrepare',
         'concat',
         'uglify',
+        'cssmin',
         'rev',
         'usemin',
         'copy:layoutDist',
@@ -154,8 +200,16 @@ module.exports = function (grunt) {
     ]);
 
     grunt.registerTask('install', [
+        'clean:app',
         'copy:app',
         'bower',
-        'bower-install'
+        'bower-install',
+        'compass:server',
+        'clean:scss'
+    ]);
+
+    grunt.registerTask('serve', [
+        'install',
+        'watch'
     ]);
 };
