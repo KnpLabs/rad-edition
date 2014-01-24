@@ -1,11 +1,11 @@
 filter:
     paths:
-        - src
-        - features
+        - src/*
+        - features/*
     excluded_paths:
-        - app
-        - vendor
-        - web
+        - app/*
+        - vendor/*
+        - web/*
 
 tools:
     php_code_sniffer:
@@ -20,11 +20,6 @@ tools:
         config:
             level: all
     php_hhvm: true
-    php_loc:
-        excluded_dirs:
-            - app
-            - vendor
-            - web
     php_mess_detector: true
     php_pdepend:
         excluded_dirs:
