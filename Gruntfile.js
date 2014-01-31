@@ -13,12 +13,13 @@ module.exports = function (grunt) {
         composer: grunt.file.readJSON('composer.json'),
         // defined grunt settings here, feel free to change
         // parameters here
-        app: {
-            name: '<%= composer.name %>',
-            src: 'src/App/Resources/front',
+        paths: {
+            name: 'front',
+            src: 'src/<%= paths.name %>',
             web: '<%= composer.extra["symfony-web-dir"] %>',
-            app: '<%= app.web %>/front',
-            build: '<%= app.web %>/dist',
+            app: '<%= paths.web %>/front',
+            tmp: '<%= paths.src %>/.tmp',
+            build: '<%= paths.web %>/front',
             views: 'src/App/Resources/views'
         },
 
@@ -29,44 +30,44 @@ module.exports = function (grunt) {
             },
             scripts: {
                 options: {
-                    jshintrc: '<%= app.src %>/.jshintrc'
+                    jshintrc: '<%= paths.src %>/.jshintrc'
                 },
-                src: ['<%= app.src %>/scripts/{,*/}*.js']
+                src: ['<%= paths.src %>/scripts/{,*/}*.js']
             },
             test: {
                 options: {
-                    jshintrc: '<%= app.src %>/test/.jshintrc'
+                    jshintrc: '<%= paths.src %>/test/.jshintrc'
                 },
-                src: ['<%= app.src %>/test/{,*/}*.js']
+                src: ['<%= paths.src %>/test/{,*/}*.js']
             },
         },
 
         // configure use min
         useminPrepare: {
-            html: '<%= app.views %>/layout.dev.html.twig',
+            html: '<%= paths.src %>/layout.html.twig',
             options: {
-                root: '<%= app.web %>',
-                dest: '<%= app.build %>',
-                staging: '<%= app.app %>/.tmp'
-            },
+                root: '<%= paths.web %>',
+                dest: '<%= paths.web %>',
+                staging: '<%= paths.tmp %>'
+            }
         },
         usemin: {
-            html: ['<%= app.app %>/layout.prod.html.twig'],
+            html: ['<%= paths.views %>/layout.html.twig'],
             options: {
-                assetsDirs: ['<%= app.build %>']
+                assetsDirs: ['<%= paths.build %>']
             }
         },
 
         // configure compass
         compass: {
             options: {
-                sassDir: '<%= app.app %>/styles',
-                cssDir: '<%= app.app %>/styles',
-                generatedImagesDir: '<%= app.app %>/images/generated',
-                imagesDir: '<%= app.app %>/images',
-                javascriptsDir: '<%= app.app %>/scripts',
-                fontsDir: '<%= app.app %>/styles/fonts',
-                importPath: '<%= app.app %>/bower_components',
+                sassDir: '<%= paths.src %>/styles',
+                cssDir: '<%= paths.tmp %>/styles',
+                generatedImagesDir: '<%= paths.app %>/images/generated',
+                imagesDir: '<%= paths.app %>/images',
+                javascriptsDir: '<%= paths.app %>/scripts',
+                fontsDir: '<%= paths.app %>/styles/fonts',
+                importPath: '<%= paths.app %>/bower_components',
                 httpImagesPath: '/front/images',
                 httpGeneratedImagesPath: '/front/images/generated',
                 httpFontsPath: '/front/styles/fonts',
@@ -75,7 +76,7 @@ module.exports = function (grunt) {
             },
             dist: {
                 options: {
-                    generatedImagesDir: '<%= app.dist %>/images/generated'
+                    generatedImagesDir: '<%= paths.dist %>/images/generated'
                 }
             },
             server: {
@@ -90,36 +91,60 @@ module.exports = function (grunt) {
             app: {
                 files: [{
                     expand: true,
-                    dot: true,
-                    cwd: '<%= app.src %>',
-                    dest: '<%= app.app %>',
-                    src: ['{,*/}*']
+                    dot: false,
+                    cwd: '<%= paths.src %>',
+                    dest: '<%= paths.app %>',
+                    src: ['{,*/}*', '!layout.html.twig', '!styles/**/*.scss', '!styles/**/*.sass', '!test']
+                }]
+            },
+            build: {
+                files: [{
+                    expand: true,
+                    dot: false,
+                    cwd: '<%= paths.src %>',
+                    dest: '<%= paths.build %>',
+                    src: [
+                        '{,*/}*',
+                        '!layout.html.twig',
+                        '!styles/**/*',
+                        '!scripts/**/*',
+                        '!images/**/*',
+                        '!test'
+                    ]
                 }]
             },
             layoutApp: {
-                src: '<%= app.views %>/layout.dev.html.twig',
-                dest: '<%= app.app %>/layout.prod.html.twig'
+                src: '<%= paths.src %>/layout.html.twig',
+                dest: '<%= paths.views %>/layout.html.twig'
             },
             layoutDist: {
-                src: '<%= app.app %>/layout.prod.html.twig',
-                dest: '<%= app.views %>/layout.prod.html.twig'
+                src: '<%= paths.tmp %>/layout.html.twig',
+                dest: '<%= paths.views %>/layout.html.twig'
             },
-            dist: {
+            styles: {
                 files: [{
                     expand: true,
-                    dot: true,
-                    cwd: '<%= app.build %>/front',
-                    dest: '<%= app.web %>/front',
-                    src: ['{,*/}*']
+                    dot: false,
+                    cwd: '<%= paths.tmp %>/styles',
+                    dest: '<%= paths.app %>/styles',
+                    src: ['**/*.css']
+                }]
+            },
+            'styles-build': {
+                files: [{
+                    expand: true,
+                    dot: false,
+                    cwd: '<%= paths.tmp %>/styles',
+                    dest: '<%= paths.build %>/styles',
+                    src: ['**/*.css']
                 }]
             }
         },
 
         // configure clean app
         clean: {
-            app: ['<%= app.app %>'],
-            build: ['<%= app.build %>'],
-            scss: ['<%= app.app %>/styles/{,*/}*.{scss,sass}', '.sass-cache'],
+            app: ['<%= paths.app %>'],
+            'styles-build': ['<%= paths.build %>/styles/**/*.css', '!<%= paths.build %>/styles/app.css', '!<%= paths.build %>/styles/vendor.css']
         },
 
         // rename distribution files for browser cache supports
@@ -127,32 +152,9 @@ module.exports = function (grunt) {
             build: {
                 files: {
                     src: [
-                        '<%= app.build %>/**/scripts/{,*/}*.js',
-                        '<%= app.build %>/**/styles/{,*/}*.css',
-                        '<%= app.build %>/**/images/{,*/}*.{gif,jpeg,jpg,png,webp}',
-                        '<%= app.build %>/**/styles/fonts/{,*/}*.*'
+                        '<%= paths.build %>/**/scripts/{,*/}*.js',
+                        '<%= paths.build %>/**/styles/{,*/}*.css'
                     ]
-                }
-            }
-        },
-
-        // automtically insert bower dependencies in html layout
-        'bower-install': {
-            app: {
-                src: ['<%= app.views %>/layout.dev.html.twig'],
-                ignorePath: '<%= app.web %>',
-                fileTypes: {
-                    twig: {
-                        block: /(([\s\t]*)<!--\s*bower:*(\S*)\s*-->)(\n|\r|.)*?(<!--\s*endbower\s*-->)/gi,
-                        detect: {
-                            js: /<script.*src=['"](.+)['"]>/gi,
-                            css: /<link.*href=['"](.+)['"]/gi
-                        },
-                        replace: {
-                            js: '<script src="{{filePath}}"></script>',
-                            css: '<link rel="stylesheet" href="{{filePath}}" />'
-                        }
-                    }
                 }
             }
         },
@@ -169,11 +171,11 @@ module.exports = function (grunt) {
         // configure watcher
         watch: {
             js: {
-                files: '<%= app.src %>/scripts/{,*/}*.js',
+                files: '<%= paths.src %>/scripts/{,*/}*.js',
                 tasks: ['install', 'jshint:scripts']
             },
             styles: {
-                files: '<%= app.src %>/styles/{,*/}*.{css,sass,scss}',
+                files: '<%= paths.src %>/styles/{,*/}*.{css,sass,scss}',
                 tasks: ['install']
             },
             bower: {
@@ -184,28 +186,28 @@ module.exports = function (grunt) {
     });
 
     grunt.registerTask('build', [
-        'clean:build',
-        'install',
-        'copy:layoutApp',
+        'clean:app',
+        'bower',
+        'copy:build',
+        'compass:dist',
+        'copy:styles-build',
         'useminPrepare',
         'concat',
         'uglify',
         'cssmin',
+        'clean:styles-build',
         'rev',
         'usemin',
-        'copy:layoutDist',
-        'clean:app',
-        'copy:dist',
-        'clean:build'
+        'copy:layoutDist'
     ]);
 
     grunt.registerTask('install', [
         'clean:app',
         'copy:app',
         'bower',
-        'bower-install',
         'compass:server',
-        'clean:scss'
+        'copy:styles',
+        'copy:layoutApp'
     ]);
 
     grunt.registerTask('serve', [

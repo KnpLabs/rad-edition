@@ -7,11 +7,10 @@
 
 {% block stylesheets %}
     <!-- build:css /front/styles/vendor.css -->
-    <!-- bower:css -->
-    <!-- endbower -->
     <!-- endbuild -->
 
     <!-- build:css /front/styles/app.css -->
+    <link rel="stylesheet" href="/front/styles/main.css" />
     <!-- endbuild -->
 {% endblock %}
 
@@ -23,10 +22,11 @@
 
 {% block javascripts %}
     <!-- build:js /front/scripts/vendor.js -->
-    <!-- bower:js -->
-    <!-- endbower -->
+    <script src="/front/bower_components/jquery/jquery.js"></script>
+    <script src="/front/bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
 
     <!-- build:js /front/scripts/app.js -->
+    <script src="/front/scripts/main.js"></script>
     <!-- endbuild -->
 {% endblock %}

@@ -8,7 +8,9 @@ web/css
 web/js
 web/front
 web/dist
-src/App/Resources/views/layout.prod.html.twig
+src/App/Resources/views/layout.html.twig
+.sass-cache/
+src/front/.tmp
 node_modules
 vendor
 bin
