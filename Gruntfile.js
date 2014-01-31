@@ -20,7 +20,8 @@ module.exports = function (grunt) {
             app: '<%= paths.web %>/front',
             tmp: '<%= paths.src %>/.tmp',
             build: '<%= paths.web %>/front',
-            views: 'src/App/Resources/views'
+            views: 'src/App/Resources/views',
+            layout: '<%= paths.src %>/layout.html.twig'
         },
 
         // configure the jshint tasks
@@ -44,7 +45,7 @@ module.exports = function (grunt) {
 
         // configure use min
         useminPrepare: {
-            html: '<%= paths.src %>/layout.html.twig',
+            html: '<%= paths.layout %>',
             options: {
                 root: '<%= paths.web %>',
                 dest: '<%= paths.web %>',
@@ -114,11 +115,7 @@ module.exports = function (grunt) {
                 }]
             },
             layoutApp: {
-                src: '<%= paths.src %>/layout.html.twig',
-                dest: '<%= paths.views %>/layout.html.twig'
-            },
-            layoutDist: {
-                src: '<%= paths.tmp %>/layout.html.twig',
+                src: '<%= paths.layout %>',
                 dest: '<%= paths.views %>/layout.html.twig'
             },
             styles: {
@@ -197,8 +194,7 @@ module.exports = function (grunt) {
         'cssmin',
         'clean:styles-build',
         'rev',
-        'usemin',
-        'copy:layoutDist'
+        'usemin'
     ]);
 
     grunt.registerTask('install', [
