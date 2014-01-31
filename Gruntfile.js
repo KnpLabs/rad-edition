@@ -35,11 +35,11 @@ module.exports = function (grunt) {
                 },
                 src: ['<%= paths.src %>/scripts/{,*/}*.js']
             },
-            test: {
+            spec: {
                 options: {
-                    jshintrc: '<%= paths.src %>/test/.jshintrc'
+                    jshintrc: '<%= paths.src %>/spec/.jshintrc'
                 },
-                src: ['<%= paths.src %>/test/{,*/}*.js']
+                src: ['<%= paths.src %>/spec/{,*/}*.js']
             },
         },
 
@@ -95,7 +95,7 @@ module.exports = function (grunt) {
                     dot: false,
                     cwd: '<%= paths.src %>',
                     dest: '<%= paths.app %>',
-                    src: ['{,*/}*', '!layout.html.twig', '!styles/**/*.scss', '!styles/**/*.sass', '!test']
+                    src: ['{,*/}*', '!layout.html.twig', '!styles/**/*.scss', '!styles/**/*.sass', '!spec']
                 }]
             },
             build: {
@@ -110,7 +110,7 @@ module.exports = function (grunt) {
                         '!styles/**/*',
                         '!scripts/**/*',
                         '!images/**/*',
-                        '!test'
+                        '!spec'
                     ]
                 }]
             },
@@ -165,6 +165,14 @@ module.exports = function (grunt) {
             }
         },
 
+        // configure the karma runner
+        karma: {
+            spec: {
+                options: {},
+                configFile: 'karma.conf.js'
+            }
+        },
+
         // configure watcher
         watch: {
             js: {
@@ -175,12 +183,53 @@ module.exports = function (grunt) {
                 files: '<%= paths.src %>/styles/{,*/}*.{css,sass,scss}',
                 tasks: ['install']
             },
+            spec: {
+                files: '<%= paths.src %>/test/spec/**/*.js',
+                tasks: ['karma']
+            },
             bower: {
                 files: 'bower.json',
                 tasks: ['install']
             }
         }
     });
+
+    // defined the karma runner testfiles :
+    grunt.config.set('karma.spec.options.files', (function () {
+        var fs         = require('fs');
+        var bowerrc    = JSON.parse(fs.readFileSync('.bowerrc', 'utf8'));
+        var testPath   = grunt.config.get('paths.src') + '/test';
+        var vendorPath = bowerrc.directory;
+        var sourcePath = grunt.config.get('paths.src') + '/scripts';
+
+        return [
+            // load vendors here :
+            vendorPath + '/jquery/jquery.js',
+
+            // load your source files that you wan't to test
+            sourcePath + '/**/*.js',
+
+            // Here you can defined mocks if you need it
+            testPath + '/mock/**/*.js',
+
+            // load the specs
+            testPath + '/spec/**/*.js'
+        ];
+    })());
+
+    // configure the preprocessor fixtures path for karma :
+    grunt.config.set('karma.spec.options.preprocessors', (function () {
+        var testPath   = grunt.config.get('paths.src') + '/test';
+        var fixtures   = testPath  + '/fixtures/**/*.html';
+        var processors = {};
+        processors[fixtures] = ['html2js'];
+
+        return processors;
+    })());
+
+    grunt.registerTask('test', [
+        'karma'
+    ]);
 
     grunt.registerTask('build', [
         'clean:app',
