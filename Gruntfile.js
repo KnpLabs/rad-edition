@@ -210,4 +210,6 @@ module.exports = function (grunt) {
         'install',
         'watch'
     ]);
+
+    grunt.registerTask('server', ['serve']);
 };
