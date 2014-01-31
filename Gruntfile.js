@@ -37,9 +37,9 @@ module.exports = function (grunt) {
             },
             spec: {
                 options: {
-                    jshintrc: '<%= paths.src %>/spec/.jshintrc'
+                    jshintrc: '<%= paths.src %>/test/.jshintrc'
                 },
-                src: ['<%= paths.src %>/spec/{,*/}*.js']
+                src: ['<%= paths.src %>/test/{,*/}*.js']
             },
         },
 
@@ -95,7 +95,7 @@ module.exports = function (grunt) {
                     dot: false,
                     cwd: '<%= paths.src %>',
                     dest: '<%= paths.app %>',
-                    src: ['{,*/}*', '!layout.html.twig', '!styles/**/*.scss', '!styles/**/*.sass', '!spec']
+                    src: ['{,*/}*', '!layout.html.twig', '!styles/**/*.scss', '!styles/**/*.sass', '!test']
                 }]
             },
             build: {
@@ -110,7 +110,7 @@ module.exports = function (grunt) {
                         '!styles/**/*',
                         '!scripts/**/*',
                         '!images/**/*',
-                        '!spec'
+                        '!test'
                     ]
                 }]
             },
@@ -185,7 +185,7 @@ module.exports = function (grunt) {
             },
             spec: {
                 files: '<%= paths.src %>/test/spec/**/*.js',
-                tasks: ['karma']
+                tasks: ['jshint:spec', 'karma']
             },
             bower: {
                 files: 'bower.json',
@@ -228,6 +228,7 @@ module.exports = function (grunt) {
     })());
 
     grunt.registerTask('test', [
+        'jshint',
         'karma'
     ]);
 
