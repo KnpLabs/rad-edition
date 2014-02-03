@@ -1,0 +1,32 @@
+{% extends '::base.html.twig' %}
+
+{% block headers %}
+    <title>{% block title %}{% block subtitle '' %} &mdash; KnpRadBundle{% endblock %}</title>
+    <meta name="description" content="{% block description '' %}">
+
+    <script src="/front/vendor/modernizr/modernizr.js"></script>
+{% endblock headers %}
+
+{% block stylesheets %}
+    <!-- build:css /front/styles/vendor.css -->
+    <!-- endbuild -->
+
+    <!-- build:css /front/styles/app.css -->
+    <!-- endbuild -->
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        {% block content '' %}
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <!-- build:js /front/scripts/vendor.js -->
+    <script src="/front/vendor/jquery/jquery.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js /front/scripts/app.js -->
+    <script src="/front/scripts/main.js"></script>
+    <!-- endbuild -->
+{% endblock %}
