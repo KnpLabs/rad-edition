@@ -8,7 +8,7 @@ web/css
 web/js
 web/front
 web/dist
-src/App/Resources/views/layout.html.twig
+src/App/Resources/views/layouts/*
 .sass-cache/
 src/front/.tmp
 node_modules

@@ -21,7 +21,7 @@ module.exports = function (grunt) {
             tmp: '<%= paths.src %>/.tmp',
             build: '<%= paths.web %>/front',
             views: 'src/App/Resources/views',
-            layout: '<%= paths.src %>/layout.html.twig'
+            layouts: '<%= paths.src %>/layouts'
         },
 
         // configure the jshint tasks
@@ -45,7 +45,7 @@ module.exports = function (grunt) {
 
         // configure use min
         useminPrepare: {
-            html: '<%= paths.layout %>',
+            html: [],
             options: {
                 root: '<%= paths.web %>',
                 dest: '<%= paths.web %>',
@@ -53,7 +53,7 @@ module.exports = function (grunt) {
             }
         },
         usemin: {
-            html: ['<%= paths.views %>/layout.html.twig'],
+            html: [],
             options: {
                 assetsDirs: ['<%= paths.build %>']
             }
@@ -95,7 +95,7 @@ module.exports = function (grunt) {
                     dot: false,
                     cwd: '<%= paths.src %>',
                     dest: '<%= paths.app %>',
-                    src: ['{,*/}*', '!layout.html.twig', '!styles/**/*.scss', '!styles/**/*.sass', '!test']
+                    src: ['{,*/}*', '!layouts', '!styles/**/*.scss', '!styles/**/*.sass', '!test']
                 }]
             },
             build: {
@@ -115,8 +115,13 @@ module.exports = function (grunt) {
                 }]
             },
             layoutApp: {
-                src: '<%= paths.layout %>',
-                dest: '<%= paths.views %>/layout.html.twig'
+                files: [{
+                    expand: true,
+                    dot: false,
+                    cwd: '<%= paths.layouts %>',
+                    dest: '<%= paths.views %>/layouts',
+                    src: ['**/*.twig']
+                }]
             },
             styles: {
                 files: [{
@@ -194,7 +199,7 @@ module.exports = function (grunt) {
         }
     });
 
-    // defined the karma runner testfiles :
+    // defined the karma runner test files :
     grunt.config.set('karma.spec.options.files', (function () {
         var fs         = require('fs');
         var bowerrc    = JSON.parse(fs.readFileSync('.bowerrc', 'utf8'));
@@ -225,6 +230,28 @@ module.exports = function (grunt) {
         processors[fixtures] = ['html2js'];
 
         return processors;
+    })());
+
+    // set the usemin preparation layouts
+    grunt.config.set('useminPrepare.html', (function () {
+        var fs = require('fs');
+        var layouts = fs.readdirSync(grunt.config.get('paths.layouts'));
+        for (var i in layouts) {
+            layouts[i] = '<%= paths.layouts %>/' + layouts[i];
+        }
+
+        return layouts;
+    })());
+
+    // set the usemin html layouts destination
+    grunt.config.set('usemin.html', (function () {
+        var fs = require('fs');
+        var layouts = fs.readdirSync(grunt.config.get('paths.layouts'));
+        for (var i in layouts) {
+            layouts[i] = '<%= paths.views %>/layouts/' + layouts[i];
+        }
+
+        return layouts;
     })());
 
     grunt.registerTask('test', [
