@@ -1,5 +1,8 @@
 language: php
 php:      5.3 # 5.4
+branches:
+    only:
+        - master # develop
 
 before_script:
     # If you use real http requests (selenium, goutte) in your feature suite:
