@@ -4,7 +4,7 @@ default:
     suites:
         default:
             path: %paths.base%/features
-            contexts: [FeatureContext, Behat\MinkExtension\Context\MinkContext]
+            contexts: [Context\FeatureContext, Behat\MinkExtension\Context\MinkContext]
     extensions:
         Behat\MinkExtension\Extension:
             base_url:    'http://localhost:8080/app_test.php'
