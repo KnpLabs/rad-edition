@@ -2,9 +2,9 @@
 
 namespace Context;
 
-use Behat\Behat\Context\ContextInterface;
-use Behat\Behat\Snippet\Context\TurnipSnippetsFriendlyInterface;
+use Behat\Behat\Context\Context;
+use Behat\Behat\Context\SnippetAcceptingContext;
 
-class FeatureContext implements ContextInterface, TurnipSnippetsFriendlyInterface
+class FeatureContext implements Context, SnippetAcceptingContext
 {
 }
