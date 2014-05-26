@@ -87,40 +87,18 @@ module.exports = function (grunt) {
             }
         },
 
-        // configure grunt copy
-        copy: {
+        // configure grunt symlink
+        symlink: {
+            options: {
+                overwrite: false
+            },
             app: {
                 files: [{
                     expand: true,
                     dot: false,
                     cwd: '<%= paths.src %>',
                     dest: '<%= paths.app %>',
-                    src: ['{,*/}*', '!layouts', '!styles/**/*.scss', '!styles/**/*.sass', '!test']
-                }]
-            },
-            build: {
-                files: [{
-                    expand: true,
-                    dot: false,
-                    cwd: '<%= paths.src %>',
-                    dest: '<%= paths.build %>',
-                    src: [
-                        '{,*/}*',
-                        '!layout.html.twig',
-                        '!styles/**/*',
-                        '!scripts/**/*',
-                        '!images/**/*',
-                        '!test'
-                    ]
-                }]
-            },
-            layoutApp: {
-                files: [{
-                    expand: true,
-                    dot: false,
-                    cwd: '<%= paths.layouts %>',
-                    dest: '<%= paths.views %>/layouts',
-                    src: ['**/*.twig']
+                    src: ['*', '!layouts', '!styles/**/*.scss', '!styles/**/*.sass', '!test']
                 }]
             },
             styles: {
@@ -132,6 +110,25 @@ module.exports = function (grunt) {
                     src: ['**/*.css']
                 }]
             },
+        },
+
+        copy: {
+            build: {
+                files: [{
+                    expand: true,
+                    dot: false,
+                    cwd: '<%= paths.src %>',
+                    dest: '<%= paths.build %>',
+                    src: [
+                        '*',
+                        '!layouts',
+                        '!styles',
+                        '!scripts',
+                        '!images',
+                        '!test'
+                    ]
+                }]
+            },
             'styles-build': {
                 files: [{
                     expand: true,
@@ -140,6 +137,15 @@ module.exports = function (grunt) {
                     dest: '<%= paths.build %>/styles',
                     src: ['**/*.css']
                 }]
+            },
+            layoutApp: {
+                files: [{
+                    expand: true,
+                    dot: false,
+                    cwd: '<%= paths.layouts %>',
+                    dest: '<%= paths.views %>/layouts',
+                    src: ['*.twig']
+                }]
             }
         },
 
@@ -147,18 +153,6 @@ module.exports = function (grunt) {
         clean: {
             app: ['<%= paths.app %>'],
             'styles-build': ['<%= paths.build %>/styles/**/*.css', '!<%= paths.build %>/styles/app.css', '!<%= paths.build %>/styles/vendor.css']
-        },
-
-        // rename distribution files for browser cache supports
-        rev: {
-            build: {
-                files: {
-                    src: [
-                        '<%= paths.build %>/**/scripts/{,*/}*.js',
-                        '<%= paths.build %>/**/styles/{,*/}*.css'
-                    ]
-                }
-            }
         },
 
         // configure the bower
@@ -194,6 +188,10 @@ module.exports = function (grunt) {
             },
             bower: {
                 files: 'bower.json',
+                tasks: ['install']
+            },
+            layout: {
+                files: '<%= paths.src %>/layouts/*.twig',
                 tasks: ['install']
             }
         }
@@ -261,6 +259,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('build', [
         'clean:app',
+        'copy:layoutApp',
         'bower',
         'copy:build',
         'compass:dist',
@@ -270,16 +269,15 @@ module.exports = function (grunt) {
         'uglify',
         'cssmin',
         'clean:styles-build',
-        'rev',
         'usemin'
     ]);
 
     grunt.registerTask('install', [
         'clean:app',
-        'copy:app',
+        'symlink:app',
         'bower',
         'compass:server',
-        'copy:styles',
+        'symlink:styles',
         'copy:layoutApp'
     ]);
 
