@@ -36,6 +36,7 @@
     "config": {
         "bin-dir": "bin"
     },
+    "minimum-stability": "beta",
     "autoload": {
         "psr-0": { "": "src/", "Context": "features/" }
     },
