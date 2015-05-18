@@ -24,7 +24,8 @@
         "symfony/assetic-bundle": "~2.3",
         "doctrine/doctrine-fixtures-bundle": "~2.1@dev",
         "doctrine/data-fixtures": "~1.0@dev",
-        "mopa/bootstrap-bundle": "~2.3@dev"
+        "mopa/bootstrap-bundle": "~2.3@dev",
+        "incenteev/composer-parameter-handler": "~2.0"
     },
     "require-dev": {
         "behat/behat": "~3@dev",
@@ -41,14 +42,14 @@
     },
      "scripts": {
         "post-install-cmd": [
-            "Knp\\RadBundle\\Composer\\ScriptHandler::installParametersFile",
+            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
         ],
         "post-update-cmd": [
-            "Knp\\RadBundle\\Composer\\ScriptHandler::installParametersFile",
+            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
@@ -58,6 +59,9 @@
     "extra": {
         "symfony-app-dir": "app",
         "symfony-web-dir": "web",
-        "symfony-assets-install": "symlink"
+        "symfony-assets-install": "symlink",
+        "incenteev-parameters": {
+            "file": "app/config/parameters.yml"
+        }
     }
 }
