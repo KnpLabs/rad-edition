@@ -29,7 +29,7 @@ before_script:
     # If you use selenium in your feature suite:
     # - export DISPLAY=:99
     # - wget http://selenium-release.storage.googleapis.com/2.45/selenium-server-standalone-2.45.0.jar
-    # - java -jar selenium-server-standalone-2.45.0.jar > /dev/null &
+    # - java -jar selenium-server-standalone-2.45.0.jar > /dev/null 2>&1 &
     # - sh -e /etc/init.d/xvfb start
     # - sleep 5
 
