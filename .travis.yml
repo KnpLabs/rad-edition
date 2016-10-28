@@ -19,8 +19,7 @@ before_script:
     # - sudo /etc/init.d/apache2 restart
 
     - composer install --dev --prefer-dist > /dev/null
-    - app/console do:da:cr -e=test > /dev/null
-    - app/console do:sc:cr -e=test > /dev/null
+    - app/console app:install --no-fixtures -e=test > /dev/null
     - chmod -R 777 app/cache app/logs
 
     # If you use DB fixtures in your feature suite:
